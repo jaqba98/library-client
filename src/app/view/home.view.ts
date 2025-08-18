@@ -3,14 +3,13 @@ import {
   ParagraphBuilder,
   RegisterView,
   UiElement,
-  ViewGenerator,
+  Generator,
 } from 'angular-ui-generator';
 
 @Component({
   selector: 'home-view',
-  template:
-    '<lib-generator-api-view-generator [uiElements]="uiElements"></lib-generator-api-view-generator>',
-  imports: [ViewGenerator],
+  template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
+  imports: [Generator],
 })
 @RegisterView({
   name: 'home',
