@@ -7,18 +7,18 @@ import {
 } from 'angular-ui-generator';
 
 @Component({
-  selector: 'home-view',
+  selector: 'page-not-found-view',
   template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
   imports: [Generator],
 })
 @AugRegisterView({
-  name: 'home',
+  name: 'page-not-found',
   children: [],
   route: {
-    title: 'Home',
-    path: '',
+    title: 'Page not found',
+    path: '**',
   },
 })
-export class HomeView {
-  uiElements: UiElement[] = [ParagraphBuilder.build('Home works!')];
+export class PageNotFoundView {
+  uiElements: UiElement[] = [ParagraphBuilder.build('Page not found works!')];
 }

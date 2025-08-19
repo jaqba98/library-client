@@ -7,18 +7,18 @@ import {
 } from 'angular-ui-generator';
 
 @Component({
-  selector: 'home-view',
+  selector: 'about-view',
   template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
   imports: [Generator],
 })
 @AugRegisterView({
-  name: 'home',
+  name: 'about',
   children: [],
   route: {
-    title: 'Home',
-    path: '',
+    title: 'About',
+    path: 'about',
   },
 })
-export class HomeView {
-  uiElements: UiElement[] = [ParagraphBuilder.build('Home works!')];
+export class AboutView {
+  uiElements: UiElement[] = [ParagraphBuilder.build('About works!')];
 }
