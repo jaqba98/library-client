@@ -13,6 +13,7 @@ import {
 })
 @RegisterView({
   name: 'home',
+  title: 'Home',
   children: [],
 })
 export class HomeView {
