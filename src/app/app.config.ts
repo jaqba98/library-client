@@ -8,11 +8,12 @@ import { augRoutes } from 'angular-ui-generator';
 import { HomeView } from './view/home.view';
 import { AboutView } from './view/about.view';
 import { PageNotFoundView } from './view/page-not-found.view';
+import { RootView } from './view/root.view';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(augRoutes([HomeView, AboutView, PageNotFoundView])),
+    provideRouter(augRoutes([RootView, HomeView, AboutView, PageNotFoundView])),
   ],
 };

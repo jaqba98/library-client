@@ -16,7 +16,7 @@ import {
   children: [],
   route: {
     title: 'Home',
-    path: '',
+    path: 'home',
   },
 })
 export class HomeView {
