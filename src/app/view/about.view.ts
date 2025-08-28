@@ -22,18 +22,28 @@ export class AboutView extends AugViewGenerator {
   override buildViewMetadata(): AugViewMetadata[] {
     return [
       {
-        kind: 'paragraph',
-        text: 'About works!',
+        kind: 'header',
+        children: [
+          {
+            kind: 'paragraph',
+            text: 'About works!',
+          },
+        ],
       },
       {
-        kind: 'link',
-        path: '/home',
-        text: 'Home',
-      },
-      {
-        kind: 'link',
-        path: '/about',
-        text: 'About',
+        kind: 'div',
+        children: [
+          {
+            kind: 'link',
+            path: '/home',
+            text: 'Home',
+          },
+          {
+            kind: 'link',
+            path: '/about',
+            text: 'About',
+          },
+        ],
       },
     ];
   }

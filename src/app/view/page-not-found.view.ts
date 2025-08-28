@@ -22,18 +22,28 @@ export class PageNotFoundView extends AugViewGenerator {
   override buildViewMetadata(): AugViewMetadata[] {
     return [
       {
-        kind: 'paragraph',
-        text: 'Page not found works!',
+        kind: 'header',
+        children: [
+          {
+            kind: 'paragraph',
+            text: 'Page not found works!',
+          },
+        ],
       },
       {
-        kind: 'link',
-        path: '/home',
-        text: 'Home',
-      },
-      {
-        kind: 'link',
-        path: '/about',
-        text: 'About',
+        kind: 'div',
+        children: [
+          {
+            kind: 'link',
+            path: '/home',
+            text: 'Home',
+          },
+          {
+            kind: 'link',
+            path: '/about',
+            text: 'About',
+          },
+        ],
       },
     ];
   }
