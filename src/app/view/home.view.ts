@@ -1,24 +1,40 @@
 import { Component } from '@angular/core';
 import {
-  ParagraphBuilder,
+  AugRegisterRoute,
   AugRegisterView,
-  UiElement,
-  Generator,
+  AugViewGenerator,
+  AugViewMetadata,
 } from 'angular-ui-generator';
 
 @Component({
   selector: 'home-view',
-  template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
-  imports: [Generator],
+  template: '',
 })
 @AugRegisterView({
   name: 'home',
   children: [],
-  route: {
-    title: 'Home',
-    path: 'home',
-  },
 })
-export class HomeView {
-  uiElements: UiElement[] = [ParagraphBuilder.build('Home works!')];
+@AugRegisterRoute({
+  path: 'home',
+  title: 'Home',
+})
+export class HomeView extends AugViewGenerator {
+  override buildViewMetadata(): AugViewMetadata[] {
+    return [
+      {
+        kind: 'paragraph',
+        text: 'Home works!',
+      },
+      {
+        kind: 'link',
+        path: 'home',
+        text: 'Home',
+      },
+      {
+        kind: 'link',
+        path: 'about',
+        text: 'About',
+      },
+    ];
+  }
 }

@@ -1,24 +1,40 @@
 import { Component } from '@angular/core';
 import {
-  ParagraphBuilder,
+  AugRegisterRoute,
   AugRegisterView,
-  UiElement,
-  Generator,
+  AugViewGenerator,
+  AugViewMetadata,
 } from 'angular-ui-generator';
 
 @Component({
   selector: 'page-not-found-view',
-  template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
-  imports: [Generator],
+  template: '',
 })
 @AugRegisterView({
   name: 'page-not-found',
   children: [],
-  route: {
-    title: 'Page not found',
-    path: '**',
-  },
 })
-export class PageNotFoundView {
-  uiElements: UiElement[] = [ParagraphBuilder.build('Page not found works!')];
+@AugRegisterRoute({
+  path: '**',
+  title: 'Page not found',
+})
+export class PageNotFoundView extends AugViewGenerator {
+  override buildViewMetadata(): AugViewMetadata[] {
+    return [
+      {
+        kind: 'paragraph',
+        text: 'Page not found works!',
+      },
+      {
+        kind: 'link',
+        path: 'home',
+        text: 'Home',
+      },
+      {
+        kind: 'link',
+        path: 'about',
+        text: 'About',
+      },
+    ];
+  }
 }
