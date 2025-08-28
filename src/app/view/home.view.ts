@@ -27,12 +27,12 @@ export class HomeView extends AugViewGenerator {
       },
       {
         kind: 'link',
-        path: 'home',
+        path: '/home',
         text: 'Home',
       },
       {
         kind: 'link',
-        path: 'about',
+        path: '/about',
         text: 'About',
       },
     ];
